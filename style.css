@@ -215,3 +215,68 @@ footer {
         width: 220px;
     }
 }
+
+/* Sección Ubicaciones */
+#locations {
+    background: linear-gradient(135deg, #ff9800, #ffd54f);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: #fff;
+}
+
+#locations h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+#locations p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+/* Lista de ubicaciones */
+#locations ul {
+    list-style: none; /* Quitar puntos */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+#locations ul li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+}
+
+/* Estilo del mapa */
+#locations iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #locations ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    #locations iframe {
+        height: 200px;
+    }
+}
+
