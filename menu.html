@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Día</title>
+    <link rel="stylesheet" href="menu.css">
+   
+</head>
+<body>
+
+    <header>
+        <h1>MENÚ DEL DÍA</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="#locations">Ubicaciones</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+      
+        <section id="menu-del-dia" class="galeria-section">
+            <h2>Platos Disponibles Hoy</h2>
+
+            <div class="galeria" id="galeria"></div>
+        </section>
+
+       
+        <section id="carrito-section">
+            <h2>Carrito de Compras</h2>
+            <div id="carrito" class="carrito"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Los Mangales — Todos los derechos reservados.</p>
+    </footer>
+
+
+   
+    <script>
+        const platos = [
+            {
+                cod_plato: 1,
+                nom_plato: "Ranga",
+                precio_plato: 25,
+                foto_plato: "ima/ranga.jpg"
+            },
+            {
+                cod_plato: 2,
+                nom_plato: "Fricase",
+                precio_plato: 20,
+                foto_plato: "ima/fricase.jpg"
+            },
+            {
+                cod_plato: 3,
+                nom_plato: "Lechon",
+                precio_plato: 15,
+                foto_plato: "ima/lechon.jpg"
+            }
+        ];
+
+        const galeria = document.getElementById("galeria");
+
+        platos.forEach(p => {
+            const item = document.createElement("article");
+            item.classList.add("galeria-item");
+
+            item.innerHTML = `
+                <img src="${p.foto_plato}" alt="${p.nom_plato}">
+                <h3>${p.nom_plato}</h3>
+                <p class="precio">Precio: Bs. ${p.precio_plato}</p>
+                <button class="boton-pedir" onclick="agregarCarrito(${p.cod_plato})">
+                    Agregar al Carrito
+                </button>
+            `;
+
+            galeria.appendChild(item);
+        });
+    </script>
+    <script src="carrito.js"></script>
+
+</body>
+</html>

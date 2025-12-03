@@ -1,0 +1,217 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease;
+}
+
+
+body {
+    background: linear-gradient(90deg, #FF5F02, #F4F804);
+}
+
+
+header {
+  background: linear-gradient(90deg, #FF5F02, #F4F804);
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(204, 204, 204, 0.2);
+}
+
+#logoManga {
+    width: 280px;
+    max-width: 80%;
+}
+
+
+nav ul {
+    list-style: none;         
+    margin: 0;
+    padding: 0;
+    display: flex;             
+    justify-content: center;
+    gap: 20px;                
+}
+
+nav ul li {
+    display: inline-block;     
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #ff7b00, #ff4500);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #ff4e00, #ff2300);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+
+#menu-toggle {
+    display: none;
+    background-color: #ff5900;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: center;  
+    gap: 35px;                
+    padding: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    background: #ffb300c5;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 48%;               
+    max-width: 850px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 85%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.content {
+    width: 70%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #222;
+}
+
+.info-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #ff7b00, #ff4500);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.info-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #ff4e00, #ff2300);
+}
+
+.carlitos {
+    text-decoration: none;
+    color: white;
+}
+
+.card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+section {
+    padding: 25px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+
+footer {
+    background-color: #ff0101;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 100%;         
+        flex-direction: column;
+    }
+
+    .card img,
+    .content {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;  
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    nav ul.show {
+        max-height: 400px;
+        padding: 15px 0;
+    }
+
+    nav ul li a {
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    #menu-toggle {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    #logoManga {
+        width: 220px;
+    }
+}

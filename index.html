@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Mangales</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="prueva.js"></script>
+    <link rel="shortcut icon" href="ima/logito.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+       <img src="ima/logito.png" height="10%" width="25%" id="logoManga">
+
+       <button id="menu-toggle">☰ Menú</button>
+
+       <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="#locations">Ubicaciones</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+       </nav>
+    </header>
+    <main>
+        <section class="container">
+
+            <article class="card">
+                <figure>
+                    <img src="ima/IMG-20241002-WA0010.jpg" alt="Charque">
+                  
+                </figure>
+
+                <div class="content">
+                    <h2><center>LO MÁS PEDIDO</center></h2>
+                    <p>
+                        El Charque es lo más pedido esta semana!
+                        Puedes verlo en nuestro menú junto a otros platos.
+                    </p>
+                    <a class="carlitos info-btn" href="menu.html">MENÚ</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <figure>
+                    <img src="ima/silp.jpg" id="losMangales" alt="Silpancho">
+                    
+                </figure>
+
+                <div class="content">
+                    <h2><center>LO MÁS PEDIDO</center></h2>
+                    <p>
+                        El Silpancho es lo más pedido esta semana!
+                        Puedes verlo en nuestro menú junto a otros platos.
+                    </p>
+                    <a class="carlitos info-btn" href="menu.html">MENÚ</a>
+                </div>
+            </article>
+
+        </section>
+
+      
+        <section id="locations">
+            <h2>Ubicaciones</h2>
+            <p>Encuentra nuestras sucursales en:</p>
+            <ul>
+                <li>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.680232409366!2d-68.07390398942991!3d-16.54223338414204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f21d6117f8fb7%3A0x2f4173ed4c9eb1a!2sLos%20mangales!5e0!3m2!1ses-419!2sbo!4v1729502620580!5m2!1ses-419!2sbo"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </li>
+
+                <li>Cota Cota, calle 25, La Paz</li>
+            </ul>
+        </section>
+
+       
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Teléfono: +591 12345678</p>
+            <p>Email: losmangales@gmail.com</p>
+            <button id="contact-btn">Envíanos un mensaje</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Los Mangales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const boton = document.getElementById("menu-toggle");
+        const menu = document.getElementById("nav-menu");
+
+        boton.addEventListener("click", () => {
+            menu.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>

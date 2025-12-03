@@ -1,0 +1,173 @@
+
+body {
+    background: linear-gradient(135deg, #f03000, #fcf000);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: white;
+
+}
+h2{
+    color: white;
+}
+
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #f03000, #fcf000);
+    padding: 15px 0;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+nav ul {
+    list-style: none; 
+    display: flex;    
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #ff7b00;
+}
+
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.galeria-item {
+    width: 270px;
+    border-radius: 15px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.25);
+    transition: 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.4);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.galeria-item h3 {
+    text-align: center;
+    margin: 10px 0 5px;
+    font-size: 1.3em;
+}
+
+.galeria-item p {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0 0 15px;
+}
+
+
+.boton-pedir {
+    display: block;
+    margin: 0 auto 15px;
+    padding: 10px 20px;
+    background: #cd7c19;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.boton-pedir:hover {
+    background: #ff5900;
+}
+
+.boton-volver {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background: #ffa200;
+    color: white;
+    border-radius: 10px;
+    width: max-content;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-volver:hover {
+    background: #e60000;
+}
+
+
+@media (max-width: 768px) {
+    .galeria-item {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+#carrito-section {
+    background: #fff3d1;
+    margin: 30px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#carrito-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.item-carrito {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.item-carrito button {
+    background: red;
+    color: #fff;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.item-carrito button:hover {
+    background: darkred;
+}
