@@ -1,69 +1,46 @@
-const platos = [
-    { cod_plato: 1, nom_plato: "Ranga", precio_plato: 25, foto_plato: "ima/ranga.jpg" },
-    { cod_plato: 2, nom_plato: "Fricase", precio_plato: 20, foto_plato: "ima/fricase.jpg" },
-    { cod_plato: 3, nom_plato: "Lechon", precio_plato: 15, foto_plato: "ima/lechon.jpg" }
-];
-
 let carrito = [];
 
+// Agregar plato al carrito
 function agregarCarrito(id) {
-    const producto = platos.find(p => p.cod_plato === id);
-    const repetido = carrito.find(item => item.cod_plato === id);
+    const plato = platos.find(p => p.cod_plato === id);
+    const repetido = carrito.find(p => p.cod_plato === id);
 
-    if (repetido) {
+    if(repetido){
         repetido.cantidad++;
     } else {
-        carrito.push({ ...producto, cantidad: 1 });
+        carrito.push({...plato, cantidad: 1});
     }
 
-    guardarCarrito();
-    mostrarCarrito();
+    actualizarCarrito();
 }
 
-function guardarCarrito() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
+// Mostrar panel y contador
+function actualizarCarrito() {
+    const panel = document.getElementById("lista-carrito");
+    const contador = document.getElementById("contador-carrito");
 
-function cargarCarrito() {
-    const data = localStorage.getItem("carrito");
-    if (data) carrito = JSON.parse(data);
-}
+    contador.textContent = carrito.reduce((acc, p) => acc + p.cantidad, 0);
 
-function mostrarCarrito() {
-    const contenedor = document.getElementById("carrito");
-    if (!contenedor) return;
+    panel.innerHTML = "";
 
-    contenedor.innerHTML = "";
-
-    if (carrito.length === 0) {
-        contenedor.innerHTML = "<p>Tu carrito está vacío</p>";
-        return;
-    }
-
-    carrito.forEach(item => {
+    carrito.forEach((item, index) => {
         const div = document.createElement("div");
         div.classList.add("item-carrito");
-
         div.innerHTML = `
-            <h4>${item.nom_plato}</h4>
-            <p>Precio: Bs. ${item.precio_plato}</p>
-            <p>Cantidad: ${item.cantidad}</p>
-            <button onclick="quitar(${item.cod_plato})">Quitar</button>
+            ${item.nom_plato} - Bs. ${item.precio_plato} x ${item.cantidad}
+            <button onclick="eliminarItem(${index})">❌</button>
         `;
-
-        contenedor.appendChild(div);
+        panel.appendChild(div);
     });
 }
 
-function quitar(id) {
-    carrito = carrito.filter(item => item.cod_plato !== id);
-    guardarCarrito();
-    mostrarCarrito();
+// Eliminar item
+function eliminarItem(index){
+    carrito.splice(index, 1);
+    actualizarCarrito();
 }
 
-cargarCarrito();
-mostrarCarrito();
-
-window.agregarCarrito = agregarCarrito;
-window.quitar = quitar;
-
+// Mostrar/ocultar panel carrito
+function toggleCarrito(){
+    document.getElementById("carrito-panel").classList.toggle("activo");
+}
