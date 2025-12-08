@@ -1,6 +1,6 @@
 /* === BODY === */
 body {
-      background: linear-gradient(90deg, #FF5F02, #dadd0c);
+    background: linear-gradient(90deg, #FF5F02, #dadd0c);
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -10,18 +10,30 @@ h1, h2 {
     color: white;
 }
 
+/* === NAV BUTTON (HAMBURGUESA) === */
+#menu-toggle {
+    display: none;
+    background-color: #ff5900;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
 /* === NAV === */
 nav ul {
-    list-style: none;         
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;             
+    display: flex;
     justify-content: center;
-    gap: 20px;                
+    gap: 20px;
 }
 
 nav ul li {
-    display: inline-block;     
+    display: inline-block;
 }
 
 nav ul li a {
@@ -42,21 +54,11 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
-#menu-toggle {
-    display: none;
-    background-color: #ff5900;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 12px;
-    cursor: pointer;
-}
 /* === MAIN === */
 main {
     width: 90%;
     margin: 30px auto;
-    background: rgba(255, 255, 255, 0.05); /* ligero fondo semitransparente */
+    background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -148,15 +150,10 @@ main {
     background: #e60000;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE GALERIA === */
 @media (max-width: 768px) {
     .galeria-item {
         width: 90%;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
     }
 }
 
@@ -193,7 +190,7 @@ main {
     right: -360px;
     width: 360px;
     height: 100%;
-   background: linear-gradient(90deg, #FF5F02, #dadd0c);
+    background: linear-gradient(90deg, #FF5F02, #dadd0c);
     padding: 20px;
     box-shadow: -3px 0 15px rgba(0,0,0,0.3);
     border-radius: 0 0 0 10px;
@@ -229,4 +226,48 @@ main {
 
 .item-carrito button:hover {
     background: #e60000;
+}
+
+/* === SOLO MENÚ RESPONSIVE (CORRECTO) === */
+/* === SOLO MENÚ RESPONSIVE (CORRECTO) === */
+@media (max-width: 768px) {
+
+    /* Mostrar el botón hamburguesa */
+    #menu-toggle {
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* Ocultar el menú al inicio */
+    #nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    /* Cuando JS añade .show */
+    #nav-menu.show {
+        display: block;
+    }
+
+    /* Menú en columna */
+    #nav-menu ul {
+        /* Se asegura que la lista principal ocupe todo el ancho y los elementos se apilen */
+        display: block; 
+        text-align: center;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    #nav-menu ul li {
+        /* Hace que cada elemento li se comporte como un bloque, ocupando todo el ancho disponible. */
+        display: block; 
+        margin: 12px 0;
+    }
+    
+    #nav-menu ul li a {
+        /* Asegura que el enlace dentro del li también ocupe todo el ancho para un área de clic más grande. */
+        width: 55%;
+        box-sizing: border-box; /* Para incluir padding y border en el ancho total */
+        margin: 0 auto;
+    }
 }

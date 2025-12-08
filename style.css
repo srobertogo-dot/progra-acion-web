@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: linear-gradient(90deg, #FF5F02, #F4F804);
+    background: linear-gradient(90deg, #FF5F02, #F4F804);
     color: #ffffff;
     padding: 15px 0;
     text-align: center;
@@ -180,7 +180,7 @@ footer {
     }
 
     nav ul li a {
-        width: 80%;
+        width: 55%;
         margin: 10px auto;
         text-align: center;
     }

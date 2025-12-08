@@ -10,16 +10,16 @@
 
 <header>
     <h1><center>MENÚ DEL DÍA</center></h1>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="#locations">Ubicaciones</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="contactanos">Contactanos</a></li>
-        </ul>
-    </nav>
+<button id="menu-toggle">☰ Menú</button>
+      <nav id="nav-menu">
+    <ul id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="index.html">Ubicaciones</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contactanos">contactanos</a></li>
+    </ul>
+</nav>
 
     <!-- ICONO DEL CARRITO -->
     <div class="icono-carrito" onclick="toggleCarrito()">
@@ -64,6 +64,18 @@
 
         galeria.appendChild(item);
     });
+    document.addEventListener("DOMContentLoaded", () => {
+    const boton = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    if (!boton || !navMenu) return;
+
+    boton.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+});
+
+
 </script>
 <script src="carrito.js"></script>
 </body>

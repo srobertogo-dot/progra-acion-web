@@ -14,15 +14,16 @@
 
        <button id="menu-toggle">☰ Menú</button>
 
-       <nav id="nav-menu">
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="#locations">Ubicaciones</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contactanos">contactanos</a></li>
-            </ul>
-       </nav>
+      <nav id="nav-menu">
+    <ul id="nav-list">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="#locations">Ubicaciones</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contactanos">contactanos</a></li>
+    </ul>
+</nav>
+
     </header>
     <main>
         <section class="container">
@@ -89,24 +90,23 @@
                 <li>Cota Cota, calle 25, La Paz</li>
             </ul>
         </section>
-
-       
-       
-
     </main>
 
     <footer>
         <p>&copy; 2024 Los Mangales. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        const boton = document.getElementById("menu-toggle");
-        const menu = document.getElementById("nav-menu");
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const boton = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const navList = navMenu ? navMenu.querySelector("ul") : null;
+  if (!boton || !navList) return;
+  boton.addEventListener("click", () => navList.classList.toggle("show"));
+});
+</script>
 
-        boton.addEventListener("click", () => {
-            menu.classList.toggle("show");
-        });
-    </script>
+
 
 </body>
 </html>
