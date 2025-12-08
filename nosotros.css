@@ -1,15 +1,26 @@
+/* === BODY === */
+body {
+    background: linear-gradient(90deg, #FF5F02, #dadd0c);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+h1{
+  color: white;
+}
+
+/* === GALERIA === */
 .galeria {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     padding: 30px;
-    background:  #ff7b00;
+    background: #ff7b00;
     border-radius: 10px;
-  }
-  
-  /* Estilos para cada contenedor de item */
-  .galeria-item {
+}
+
+/* Estilos para cada contenedor de item */
+.galeria-item {
     position: relative;
     width: 270px;
     overflow: hidden;
@@ -17,58 +28,144 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background: #fff;
-  }
-  
-  /* Efecto de hover para el contenedor de cada item */
-  .galeria-item:hover {
+}
+
+/* Efecto de hover para el contenedor de cada item */
+.galeria-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* Estilos para las imágenes */
-  .galeria-item img {
+    box-shadow: 0 15px 25px rgba(255, 228, 228, 0.4);
+}
+
+/* Estilos para las imágenes */
+.galeria-item img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-  }
-  
-  /* Estilos para el contenedor de texto */
-  .galeria-texto {
+}
+
+/* Estilos para el contenedor de texto */
+.galeria-texto {
     padding: 15px;
     text-align: center;
     background: linear-gradient(135deg, #f03000, #fcf000);
-    color: #000000;
+    color: #ffffff;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-  }
-  
-  /* Estilos para el nombre del plato */
-  .galeria-texto h3 {
+}
+
+/* Estilos para el nombre del plato */
+.galeria-texto h3 {
     margin: 0;
     font-size: 1.2em;
     font-weight: bold;
-  }
-  
-  /* Estilos para el precio */
-  .galeria-texto p {
+}
+
+/* Estilos para el precio */
+.galeria-texto p {
     margin: 5px 0 0;
     font-size: 1em;
-  }
-  
-  /* Estilos para el título de la galería */
-  .galeria-titulo {
+}
+
+/* Estilos para el título de la galería */
+.galeria-titulo {
     text-align: center;
     font-size: 2.5em;
     margin: 20px;
     color: #fb7900;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+/* === NAV BUTTON (HAMBURGUESA) === */
+#menu-toggle {
+    display: none;
+    background-color: #ff5900;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* === NAV (Desktop) === */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Mantiene la fila en desktop */
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #ff7b00, #ff4500);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #ff4e00, #ff2300);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* ----------------------------------- */
+
+/* === RESPONSIVIDAD (max-width: 768px) === */
+@media (max-width: 768px) {
+    /* Galería */
     .galeria-item {
-      width: 100%;
+        width: 100%;
     }
-  }
+
+    /* Mostrar el botón hamburguesa */
+    #menu-toggle {
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* Ocultar el menú al inicio */
+    #nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    /* Cuando JS añade .show */
+    #nav-menu.show {
+        display: block;
+    }
+
+    /* Menú en columna */
+    #nav-menu ul {
+        /* Se asegura que la lista principal ocupe todo el ancho y los elementos se apilen */
+        display: block; 
+        text-align: center;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    #nav-menu ul li {
+        /* HACE QUE CADA ELEMENTO OCUPA TODO EL ANCHO -> COLUMNA */
+        display: block; 
+        margin: 12px 0;
+    }
+    
+    #nav-menu ul li a {
+        /* Asegura que el enlace tenga un ancho y se centre, haciendo los botones grandes y usables */
+        width: 70%; /* Aumentado a 70% para mejor visibilidad */
+        box-sizing: border-box; 
+        margin: 0 auto;
+    }
+}

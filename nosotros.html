@@ -8,7 +8,20 @@
   <link rel="stylesheet" href="nosotros.css">
 </head>
 <body>
-  <h1 class="galeria-titulo">Galería de Fotos</h1>
+
+ <header>
+    <h1><center>Galeria de Fotos</center></h1>
+<button id="menu-toggle">☰ Menú</button>
+      <nav id="nav-menu">
+    <ul id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="index.html">Ubicaciones</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contactanos">contactanos</a></li>
+    </ul>
+</nav>
+</header>
   <div class="galeria">
     <div class="galeria-item">
       <img src="ima/mangales.jpeg" alt="Plato 1">
@@ -78,5 +91,17 @@
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const boton = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    if (!boton || !navMenu) return;
+
+    boton.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+});
+  </script>
 </body>
 </html>

@@ -29,6 +29,7 @@ function actualizarCarrito() {
         div.innerHTML = `
             ${item.nom_plato} - Bs. ${item.precio_plato} x ${item.cantidad}
             <button onclick="eliminarItem(${index})">❌</button>
+            <button onclick="comprarItem(${index})">Comprar</button>
         `;
         panel.appendChild(div);
     });
@@ -37,6 +38,14 @@ function actualizarCarrito() {
 // Eliminar item
 function eliminarItem(index){
     carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+// Comprar item
+function comprarItem(index){
+    const item = carrito[index];
+    alert(`¡Has comprado ${item.cantidad} ${item.nom_plato}(s) por Bs. ${item.precio_plato * item.cantidad}, Muchas Gracias por la compra!`);
+    carrito.splice(index, 1); // Elimina el item del carrito después de comprar
     actualizarCarrito();
 }
 
